@@ -14,6 +14,8 @@ $.ajax({
     method: "GET"
   }).then(function(response) {
     console.log(response);
+
+  
     
 
     var cityDiv = $("<div class='city'>");
@@ -21,9 +23,22 @@ $.ajax({
     var temp=$("<p>").text("Temperature: " + response.main.temp + " degree");
     var Humitidy=$("<p>").text("Humidity: " + response.main.humidity +"%");
     var wind=$("<p>").text("Wind Speed: " + response.wind.speed + "KMh");
+    
+    // if (weather == "clouds"){
+    //   weatherPic = "http://openweathermap.org/img/wn/03d@2x.png";
+    //  }else if (weather == "clear"){
+    //   weatherPic = "http://openweathermap.org/img/wn/01d@2x.png"
+    //  }else{
+    //   weatherPic = "http://openweathermap.org/img/wn/09d@2x.png"
+    //  };
+    //  console.log(weatherPic)
+  
 
-    // cityDiv.append(temp);
+    cityDiv.append(temp);
     cityDiv.append(cityName, temp, Humitidy, wind);
+    
+
+    
 
     $("#weatherInfo").empty();
     $("#weatherInfo").append(cityDiv);
@@ -64,6 +79,7 @@ $.ajax({
       method: "GET"
     }).then(function(response2) {
       console.log(response2);
+      $("#forecast").empty();
       // var forecastHeading = $("<h2>Weather Forecast</h2>");
       for(var i = 0; i<40; i+=8){
         console.log("is working");

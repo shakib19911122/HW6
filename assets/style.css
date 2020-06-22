@@ -25,7 +25,7 @@ h3{
     border-color: lightgray;
 }
 
-#forecast{
+#forecastContainer{
     border-width: thin;
     border-style: solid;
     float: right;
