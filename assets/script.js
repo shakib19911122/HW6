@@ -66,12 +66,10 @@ $.ajax({
       console.log(response2);
       // var forecastHeading = $("<h2>Weather Forecast</h2>");
       for(var i = 0; i<40; i+=8){
-        console.log("is working")
-
+        console.log("is working");
+        
       
-      var h2Div = $("<div class='h2'>").css(
-        {"float":"left"}
-      );
+      
       var forecastDiv = $("<div class='futureForecast col-2.4'>").css({"border-radius": "25px",
         "border": "2px solid #73AD21",
         "padding": "20px", 
@@ -82,16 +80,15 @@ $.ajax({
       var temp = $("<p>").text("Temperature: " + response2.list[i].main.temp);
       var humidity = $("<p>").text("Humidity: " + response2.list[i].main.humidity);
       forecastDiv.append(date,temp,humidity);
-    // h2Div.append(forecastHeading)
-      
+    
     
     $("#forecast").append(forecastDiv);
 
   }
-
+  
     });
   }
-
+  
   $(document).on("click", ".city-btn", displayWeatherInfo);
   $(document).on("click", ".city-btn", displayWeatherForecast);
 
