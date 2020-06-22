@@ -1,0 +1,41 @@
+.header{
+    text-align: center;
+    background-color: darkgray;
+
+}
+
+
+
+
+
+
+.search-city{
+    float: left;
+}
+
+h3{
+    font-size: small;
+
+}
+
+#weatherInfo{
+    border-width: thin;
+    border-style: solid;
+    float: right;
+    border-color: lightgray;
+}
+
+#forecast{
+    border-width: thin;
+    border-style: solid;
+    float: right;
+    border-color: lightgray;
+    top: 10px;
+    
+}
+
+#history{
+    float: left;
+    top: 50px;
+    right: 150px;
+}
