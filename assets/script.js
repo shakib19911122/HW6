@@ -55,10 +55,6 @@ $.ajax({
     renderButtons();
   });
   
-
-
-
-  
   function displayWeatherForecast(){
     var city = $(this).attr("data-name");
     var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&appid=" + APIKey;
@@ -68,40 +64,30 @@ $.ajax({
       method: "GET"
     }).then(function(response2) {
       console.log(response2);
-      var forecastHeading = $("<h2>Weather Forecast</h2>");
-      var h2Div = $("<div class='h2'>")
-
-
-      
+      // var forecastHeading = $("<h2>Weather Forecast</h2>");
+      for(var i = 0; i<40; i+=8){
+        console.log("is working")
 
       
- 
-      
+      var h2Div = $("<div class='h2'>").css(
+        {"float":"left"}
+      );
       var forecastDiv = $("<div class='futureForecast col-2.4'>").css({"border-radius": "25px",
         "border": "2px solid #73AD21",
         "padding": "20px", 
         "width": "200px",
-        "height": "150px" });
+        "height": "150px",
+        "float": "left" });
       var date = $("<p>").text(response2.list[i].dt_txt.slice(0,11));
       var temp = $("<p>").text("Temperature: " + response2.list[i].main.temp);
       var humidity = $("<p>").text("Humidity: " + response2.list[i].main.humidity);
       forecastDiv.append(date,temp,humidity);
-
-
-
+    // h2Div.append(forecastHeading)
       
-
-     
-  
     
-  
-    h2Div.append(forecastHeading)
-      
-    $("#forecast").empty();
-    $("#forecast").append(forecastHeading,forecastDiv);
+    $("#forecast").append(forecastDiv);
 
-
-    
+  }
 
     });
   }
