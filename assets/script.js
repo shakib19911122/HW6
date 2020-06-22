@@ -72,7 +72,7 @@ $.ajax({
   
   function displayWeatherForecast(){
     var city = $(this).attr("data-name");
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&appid=" + APIKey;
 
     $.ajax({
       url: queryURL,
